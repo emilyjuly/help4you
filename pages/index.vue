@@ -59,7 +59,7 @@ const resultsItems = [
             </div>
         </template>
     </div>
-    <section id="paraQuem" class="flex flex-column gap-6 p-6 bg-no-repeat bg-cover" style="background-image: url('/background.png');">
+    <section id="paraQuem" class="flex flex-column gap-8 p-6 py-8 bg-no-repeat bg-cover" style="background-image: url('/background.png');">
         <div class="flex flex-column">
             <h1 class="font-light text-3xl mb-4" style="font-family: 'Righteous', sans-serif; letter-spacing: 1px; color: #263238;">Para quem o acompanhamento é?</h1>
             <template v-for="(item, index) in aboutItems" :key="index">
@@ -125,7 +125,7 @@ const resultsItems = [
     display: flex;
     align-items: center;
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-top: 35px;
     color: #263238;
     font-family: 'IBM Plex Sans'
         , sans-serif;
