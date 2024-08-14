@@ -11,9 +11,17 @@
   },
   "dependencies": {
     "@nuxt/icon": "^1.4.5",
+    "@primevue/themes": "^4.0.4",
     "nuxt": "^3.12.4",
     "nuxt-primevue": "^3.0.0",
     "primeflex": "^3.3.1",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.0.4",
     "vue": "latest"
+  },
+  "devDependencies": {
+    "@iconify-json/heroicons": "^1.1.24",
+    "@iconify-json/mdi": "^1.1.68",
+    "@primevue/nuxt-module": "^4.0.4"
   }
 }
