@@ -160,7 +160,7 @@ const feedbacks = [
     <section id="planos" class="p-6 bg-no-repeat bg-cover" style="background-image: url('/background.png');">
         <div class="flex flex-column w-full">
             <h1 class="font-light text-3xl mb-4" style="font-family: 'Righteous', sans-serif; letter-spacing: 1px; color: #263238;">Nossos planos</h1>
-            <div class="flex justify-content-between">
+            <div class="card-container">
                 <div class="card-plano">
                     <p class="font-semibold text-5xl">Basic</p>
                     <p class="mt-3">Dê o primeiro passo na sua carreira com atividades semanais e orientação em grupo.</p>
@@ -359,7 +359,12 @@ const feedbacks = [
     border-radius: 12px;
     border: 1px solid rgba(209, 213, 219, 0.3);
     color: #263238;
-    width: 30rem;
+    width: 25%;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media (max-width: 480px) {
@@ -402,6 +407,15 @@ const feedbacks = [
         flex-direction: column;
         align-items: start;
         font-size: 13px;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+
+    .card-plano {
+        width: 100%;
+        margin-bottom: 3rem;
     }
 }
 
