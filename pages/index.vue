@@ -3,14 +3,6 @@ import { ref } from "vue";
 
 import '~/assets/css/first.css'
 
-const planos = ref<HTMLElement | null>(null);
-
-function scrollToPlans() {
-    if (planos.value) {
-        planos.value.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
 const infoItems = [
     {
         icon: 'heroicons:calendar-date-range',
@@ -61,13 +53,13 @@ const feedbacks = [
 
 const plans = [
     {
-        title: 'Basic', subtitle: 'Dê o primeiro passo na sua carreira com atividades semanais e orientação em grupo.', duracao: '2 meses', obs: 'Vagas limitadas a 5 participantes', valor: '0.00', atividades: [
+        title: 'Basic', subtitle: 'Dê o primeiro passo na sua carreira com atividades semanais e orientação em grupo.', duracao: '2 meses', valor: '0.00', atividades: [
             'Propostas de atividades semanais',
             'Participação em grupo no Whatsapp com orientações gerais'
         ]
     },
     {
-        title: 'Essential', subtitle: 'Aprimore suas chances no mercado com suporte personalizado, análise de currículo e envio de vagas alinhadas ao seu perfil.', duracao: 'Ilimitada', valor: '29.99/mês', atividades: [
+        title: 'Essential', subtitle: 'Aprimore suas chances no mercado com suporte personalizado, análise de currículo e envio de vagas alinhadas ao seu perfil.', duracao: 'Ilimitada', valor: '19.99/mês', atividades: [
             'Tudo do Pacote Gratuito',
             'Acompanhamento diário e personalizado via WhatsApp',
             'Envio de vagas que se encaixam no seu perfil semanalmente',
@@ -76,7 +68,7 @@ const plans = [
         ]
     },
     {
-        title: 'Premium', subtitle: 'Prepare-se para o próximo nível com desafios técnicos práticos, simulações de entrevistas e supervisão dedicada para alcançar seus objetivos.', duracao: 'Ilimitada', valor: '49.99/mês', atividades: [
+        title: 'Premium', subtitle: 'Prepare-se para o próximo nível com desafios técnicos práticos, simulações de entrevistas e supervisão dedicada para alcançar seus objetivos.', duracao: 'Ilimitada', valor: '29.99/mês', atividades: [
             'Tudo do Pacote Essential',
             'Disponibilização de roadmap de estudos de acordo com seu perfil',
             'Consultas personalizadas para planejamento de carreira',
@@ -99,7 +91,6 @@ const plans = [
                     Agregando à Comunidade Tech!
                 </h1>
                 <p class="font-semibold text-lg" style="font-family: 'IBM Plex Mono', monospace;">Acompanhamento de carreira, para desenvolvedores de <br> software em qualquer etapa da carreira.</p>
-                <PrincipalButton label="Quero Participar" @click="scrollToPlans" />
             </div>
         </section>
         <section class="info-container">
@@ -200,7 +191,7 @@ const plans = [
                 <div class="card-container">
                     <template v-for="plan in plans">
                         <div class="card-plano" :class="{ 'card-animation': plan.title === 'Essential' }">
-                            <span v-if="plan.title === 'Essential'" class="flex justify-content-center w-3 p-1" style="border: 1px solid #263238; border-radius: 20px;">Popular</span>
+                            <span v-if="plan.title === 'Essential'" class="flex justify-content-center w-4 p-1" style="border: 1px solid #263238; border-radius: 20px;">Popular</span>
                             <p class="font-semibold text-5xl">{{ plan.title }}</p>
                             <p class="mt-3">{{ plan.subtitle }}</p>
                             <div class="mt-3">
@@ -228,6 +219,27 @@ const plans = [
                 </div>
             </div>
         </section>
+        <footer class="flex flex-column justify-content-between" id="footer" style="font-family: 'IBM Plex Sans'
+                , sans-serif; color: #263238;">
+            <div class="flex flex-column justify-content-between items-center py-5 px-7" style="background-color: aliceblue;">
+                <p class="flex flex-column text-sm">
+                    &copy; 2024 - Projeto Help 4 You 3ª Edição. Todos os direitos reservados. <br>                    
+                    <a class="flex items-center mt-2" style="color:#263238; text-decoration: none;" href="https://www.linkedin.com/in/emily-july/" target="_blank">
+                        <b class="mr-2">Responsável:</b> <Icon name="mdi:linkedin" size="20" />Emily July
+                    </a>
+                </p>
+                <div class="flex flex-column" style="color: #263238;">
+                    <a style="color: #263238;" href="mailto:help4youcc@gmail.com" target="_blank" class=" flex items-center text-sm mr-3">
+                        <Icon name="mdi:gmail" size="20" />
+                        Fale conosco
+                    </a>
+                    <a style="color: #263238;" class="flex mt-2 items-center text-sm" href="https://www.linkedin.com/company/help-4-you-acompanhamento/" target="_blank">
+                        <Icon name="mdi:linkedin" size="20" />
+                        Acesse nossa página no LinkedIn
+                    </a>
+                </div>
+            </div>    
+        </footer>
     </main>
 </template>
 
