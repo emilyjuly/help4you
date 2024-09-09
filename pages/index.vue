@@ -12,7 +12,7 @@ const infoItems = [
     {
         icon: 'heroicons:user-group-16-solid',
         title: 'Próxima turma',
-        subtitle: '09 de setembro de 2024',
+        subtitle: 'Em breve',
     },
     {
         icon: 'heroicons:rocket-launch-16-solid',
@@ -206,7 +206,8 @@ const plans = [
                                     <span class="font-bold text-6xl" style="color: #263238;">{{ plan.valor }}</span>
                                 </p>
                             </div>
-                            <PrincipalButton class="w-full mt-5" label="Quero Participar" />
+                            <PrincipalButton v-if="plan.title !== 'Basic'" class="w-full mt-5" label="Quero Participar" />
+                            <p v-if="plan.title === 'Basic'">Inscrições encerradas, aguarde formação de nova turma</p>
                             <template v-for="(atividade, index) in plan.atividades">
                                 <div class="flex align-items-center mt-3">
                                     <Icon class="mr-3" name="heroicons:check-circle-solid" style=" width: 25px; height: 25px; flex-shrink: 0;" />
